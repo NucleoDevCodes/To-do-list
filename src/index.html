@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de compras</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto+Slab:wght@100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <main class="container">
+        <header class="header">
+            <img class="logo" src="img/sacola_compras.png" alt="Sacola de compras">
+        </header>
+        <form class="form">
+            <input id="input__compra" class="input__compra" type="text" placeholder="Digite o que quer comprar">
+            <button id="adicionar__item" class="btn__adicionar" type="submit">Adicionar item</button>
+        </form>
+        <section class="info">
+            <h2 class="titulo">Sua lista de compras</h2>
+            <p class="texto__cta">Sua lista está vazia. Adicione itens a ela para não esquecer nada na próxima compra!</p>
+            <ul class="lista">
+                <li class="lista__item">
+                    <div class="info__left">
+                        <input type="checkbox" class="checkbox__atividade" >
+                        <span class="texto__lista">Ração de gato</span>
+                    </div>
+                    <button class="btn__excluir">
+                        🗑️
+                    </button>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <script src="main.js"></script>
+</body>
+
+</html>

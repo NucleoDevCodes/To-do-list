@@ -1,0 +1,139 @@
+:root {
+    /* Fontes */
+    --fonte-texto: "Lato", sans-serif;
+    --fonte-titulo: "Roboto Slab", serif;
+
+    /* Cor card */
+    --bg-card: #f0f0f0;
+
+    /* Cor input */
+    --cor-borda-input: #AB83A4;
+
+    /*Cores Botão*/
+    --cor-botao: #6A0572;
+    --cor-texto-botao: #f0f0f0;
+
+    /* Cor Titulo */
+    --cor-titulo: #6A0572 ;
+    --cor-borda-titulo: #AB83A4;
+
+    /* Lista */
+    --bg-lista-item: #fff;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background: linear-gradient(150deg, #8E44AD, #3498DB );
+    background-size: 100%;
+}
+
+.container {
+    width: 480px;
+    height: 650px;
+    margin: 190px auto;
+    background-color: var(--bg-card);
+}
+
+.header {
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.logo {
+    margin-top: 40px;
+    width: 114px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input__compra {
+    margin: 20px;
+    width: 400px;
+    padding: 8px 16px;
+    border-radius: 28px;
+    border: 1px solid var(--cor-borda-input);
+    font-family: var(--fonte-texto);
+}
+
+.input__compra:focus {
+    outline: none;
+}
+
+.btn__adicionar {
+    font-family: var(--fonte-titulo);
+    margin: 0 auto;
+    padding: 8px 16px;
+    width: 176px;
+    border-radius: 28px;
+    border: none;
+    background-color: var(--cor-botao);
+    color: var(--cor-texto-botao);
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo {
+    font-family: var(--fonte-titulo);
+    margin: 20px 0px;
+    width: 400px;
+    padding: 8px 16px;
+    text-align: center;
+    color: var(--cor-titulo);
+    border-bottom: 2px solid var(--cor-borda-input);
+    
+}
+
+.texto__cta {
+    font-family: var(--fonte-texto);
+    width: 400px;
+    text-align: center;
+}
+
+.lista__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 8px;
+    width: 400px;
+    background-color: var(--bg-lista-item);
+    list-style: none;
+}
+
+.info__left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkbox__atividade {
+    margin-top: 1px;
+    margin-right: 12px;
+}
+
+.texto__lista {
+    font-family: var(--fonte-texto);
+}
+
+.btn__excluir {
+    border: none;
+    background-color: var(--bg-lista-item);
+}
