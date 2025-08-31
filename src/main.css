@@ -14,12 +14,14 @@
     --cor-texto-botao: #f0f0f0;
 
     /* Cor Titulo */
-    --cor-titulo: #6A0572 ;
+    --cor-titulo: #6A0572;
     --cor-borda-titulo: #AB83A4;
 
     /* Lista */
     --bg-lista-item: #fff;
 
+    /* cor span */
+    --color-span-completed: #c0c0c0
 }
 
 * {
@@ -29,20 +31,31 @@
     font-family: sans-serif;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+    min-height: 100vh;
+    min-width: 100vw;
 }
 
 body {
-    background: linear-gradient(150deg, #8E44AD, #3498DB );
-    background-size: 100%;
+
+    background: linear-gradient(150deg, #8E44AD, #3498DB);
+    background-size: contain;
+    background-repeat: no-repeat;
+
 }
 
 .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 480px;
-    height: 650px;
+    min-height: 550px;
+    max-height: fit-content;
     margin: 190px auto;
     background-color: var(--bg-card);
+    border-radius: 16px;
 }
 
 .header {
@@ -51,7 +64,6 @@ body {
 }
 
 .logo {
-    margin-top: 40px;
     width: 114px;
 }
 
@@ -62,7 +74,7 @@ body {
 }
 
 .input__compra {
-    margin: 20px;
+    margin: 20px 0;
     width: 400px;
     padding: 8px 16px;
     border-radius: 28px;
@@ -83,6 +95,7 @@ body {
     border: none;
     background-color: var(--cor-botao);
     color: var(--cor-texto-botao);
+    font-size: 1rem;
 }
 
 .info {
@@ -99,13 +112,20 @@ body {
     text-align: center;
     color: var(--cor-titulo);
     border-bottom: 2px solid var(--cor-borda-input);
-    
+
 }
 
 .texto__cta {
     font-family: var(--fonte-texto);
     width: 400px;
     text-align: center;
+}
+
+.lista {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .lista__item {
@@ -116,6 +136,8 @@ body {
     width: 400px;
     background-color: var(--bg-lista-item);
     list-style: none;
+    border-radius: 12px;
+    margin-bottom: 8px;
 }
 
 .info__left {
@@ -127,6 +149,7 @@ body {
 .checkbox__atividade {
     margin-top: 1px;
     margin-right: 12px;
+    cursor: pointer;
 }
 
 .texto__lista {
@@ -136,4 +159,29 @@ body {
 .btn__excluir {
     border: none;
     background-color: var(--bg-lista-item);
+    cursor: pointer;
+    padding: 2px;
+}
+
+.atividade__completa {
+    text-decoration: line-through;
+    color: var(--color-span-completed);
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 40px auto;
+        max-width: 90%;
+    }
+    .form,
+    .titulo,
+    .texto__cta,
+    .lista__item {
+        max-width: 80%;
+    }
+
+    .input__compra {
+        max-width: 100%;
+    }
+
 }
