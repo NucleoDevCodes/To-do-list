@@ -156,7 +156,7 @@ body {
     font-family: var(--fonte-texto);
 }
 
-.btn__excluir {
+.btn__excluir, .btn__editar {
     border: none;
     background-color: var(--bg-lista-item);
     cursor: pointer;

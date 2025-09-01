@@ -6,18 +6,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const textoCta = document.querySelector('.texto__cta');
     const lista = document.querySelector('.lista');
 
+    let indiceEditar = null;
+
 
 
 
     botaoAdicionar.addEventListener('click', (e) => {
         e.preventDefault();
-        adicionarItem();
+        if (indiceEditar !== null) {
+            atividadesPendentes[indiceEditar] = input.value;
+            indiceEditar = null;
+            botaoAdicionar.textContent = 'Adicionar item'
+        } else {
+            adicionarItem();
+        }
         criarLista();
+        input.value= '';
     })
 
     lista.addEventListener('click', (e) => {
         apagarItem(e);
         itemComprado(e);
+        editarItem(e);
     })
 
 
@@ -41,9 +51,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 <input type="checkbox" class="checkbox__atividade" >
                 <span class="texto__lista">${item}</span>
             </div>
+            <div class="info__right">
             <button type="button" class="btn__excluir" data-index= "${index}" title="excluir">
                 🗑️
             </button>        
+            <button type="button" class="btn__editar" data-index= "${index}" title="editar">
+                ✏️
+            </button>        
+            </div>
         `;
             lista.appendChild(li);
         })
@@ -63,9 +78,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function itemComprado(e) {
         const checkbox = e.target.classList.contains('checkbox__atividade')
-        if(checkbox) {
+        if (checkbox) {
             const span = e.target.nextElementSibling;
             span.classList.toggle('atividade__completa')
+        }
+    }
+
+    function editarItem(e) {
+        const botaoEditar = e.target.classList.contains('btn__editar')
+        if (botaoEditar) {
+            indiceEditar = e.target.getAttribute('data-index');
+            input.value = atividadesPendentes[indiceEditar];
+            botaoAdicionar.textContent = 'Alterar item';
         }
     }
 })
